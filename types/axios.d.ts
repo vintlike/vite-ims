@@ -5,7 +5,7 @@ export interface RequestOptions {
   // 设置token
   specialToken?: string;
   // 是否开启自定义请求报错提示
-  errorMassge?: boolean;
+  errorMessage?: boolean;
   // 是否携带token
   withToken?: boolean;
   // 错误消息提示类型

@@ -6,19 +6,19 @@ import './index.less';
 
 const AppTheme = () => {
   const dispatch = useAppDispatch();
-  const themeMode = useAppSelector(state => state.app.themeMode);
+  const themeMode = useAppSelector((state) => state.app.themeMode);
 
-  const thme = theme.useToken();
+  const globalTheme = theme.useToken();
 
   return (
     <div
       className={`app-theme cursor ${themeMode === 'dark' && 'app-theme-dark'}`}
-      style={{ border: `1px solid ${thme.token.colorBorder}` }}
+      style={{ border: `1px solid ${globalTheme.token.colorBorder}` }}
       onClick={() => {
         dispatch(setAppThemeMode(themeMode === 'dark' ? 'light' : 'dark'));
       }}
     >
-      <div className="theme-inner" style={{ backgroundColor: thme.token.colorBorder }} />
+      <div className="theme-inner" style={{ backgroundColor: globalTheme.token.colorBorder }} />
       <SvgIcon name="sun" />
       <SvgIcon name="moon" />
     </div>

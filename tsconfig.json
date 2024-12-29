@@ -5,15 +5,20 @@
     "jsxImportSource": "@emotion/react",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "useDefineForClassFields": true,
+
     "baseUrl": ".",
     "module": "ESNext",
+
+    /* Bundler mode */
     "moduleResolution": "Node",
     "paths": {
       "@/*": ["src/*"],
       "#/*": ["types/*"]
     },
     "resolveJsonModule": true,
+
     "allowJs": false,
+    /* Linting */
     "strict": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,

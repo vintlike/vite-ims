@@ -10,6 +10,10 @@ export function createViteServer(): ServerOptions {
     strictPort: false,
     // boolean | string 启动项目时自动在浏览器打开应用程序；如果为string，比如"/index.html"，会打开http://localhost:5173/index.html
     // open: true,
+    // 是否开启 https
+    // https: false,
+    // 服务端渲染
+    // ssr: false,
     // boolean | CorsOptions  为开发服务器配置 CORS。默认启用并允许任何源，传递一个 选项对象 来调整行为或设为 false 表示禁用。
     // cors: true,
     // 设置为 true 强制使依赖预构建。
@@ -17,11 +21,14 @@ export function createViteServer(): ServerOptions {
     // 自定义代理规则
     proxy: {
       '/api': {
+        secure: false,
+        // websocket支持
+        ws: true,
         target: '',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ''),
-      },
-    },
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   };
   return viteServer;
 }

@@ -1,48 +1,49 @@
 import { ErrorElement } from '@/router/lazy/whiteList';
 import { Typography } from 'antd';
 import { redirect } from 'react-router';
-import type { MenuItem, RouteList } from '@/router/route';
+import type { MenuItem, RouteItem } from '@/router/RouteTypes';
 import type { RouteObject } from 'react-router';
 
 const { Text } = Typography;
 
 export const useRouteList = () => {
-  function handleRouteList(list: RouteList[]): RouteObject[] {
-    return list.map((i: RouteList) => {
-      const item: RouteObject = {
-        path: i.path,
-        id: i.id,
-        element: i.element,
+  function handleRouteList(list: RouteItem[]): RouteObject[] {
+    return list.map((item: RouteItem) => {
+      const rtItem: RouteObject = {
+        id: item.id,
+        path: item.path,
+        element: item?.element
       };
 
-      if (i.element) {
-        item.errorElement = <ErrorElement pageType="Page" />;
+      if (item?.element) {
+        rtItem.errorElement = <ErrorElement pageType="Page" />;
       }
 
-      if (i.children) {
-        item.children = handleRouteList(i.children);
-        if (i.redirect && item.children.length) {
-          item.children.push({
+      if (item?.children) {
+        rtItem.children = handleRouteList(item.children);
+        if (item?.redirect && rtItem.children.length) {
+          rtItem.children.push({
             index: true,
             loader() {
-              return redirect(i.redirect || '');
-            },
+              return redirect(item.redirect || '');
+            }
           });
         }
       }
 
-      return item;
+      return rtItem;
     });
   }
 
-  function routeListToMenu(rtList: RouteList[], path?: React.Key): MenuItem[] {
+  function routeListToMenu(list: RouteItem[], path?: React.Key): MenuItem[] {
     const menuList: MenuItem[] = [];
-    rtList.forEach((i: RouteList) => {
-      const item = i;
-      if (item.handle.hideSidebar) return;
+    list.forEach((item: RouteItem) => {
+      if (item?.meta?.hideSidebar) {
+        return;
+      }
 
-      if (!item.alwaysShow && item.alwaysShow !== undefined && !item.element) {
-        if (item.children && item.children[0]) {
+      if (!item?.alwaysShow && item?.alwaysShow !== undefined && !item?.element) {
+        if (item?.children && item?.children?.[0]) {
           menuList.push(routeListToMenu([item.children[0]], item.path)[0]);
           return;
         }
@@ -50,7 +51,7 @@ export const useRouteList = () => {
 
       let rtItem: MenuItem = {
         key: item.path,
-        label: '',
+        label: ''
       };
 
       if (path) {
@@ -60,11 +61,11 @@ export const useRouteList = () => {
       rtItem = {
         ...rtItem,
         label: (
-          <Text style={{ color: 'currentcolor' }} ellipsis={{ tooltip: item.handle.label }}>
-            {item.handle.label}
+          <Text style={{ color: 'currentcolor' }} ellipsis={{ tooltip: item?.meta?.label }}>
+            {item?.meta?.label}
           </Text>
         ),
-        icon: item.handle.icon,
+        icon: item?.meta?.icon
       };
 
       if (item.children && !item.element) {

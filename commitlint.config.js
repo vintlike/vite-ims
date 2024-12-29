@@ -5,17 +5,17 @@ import { fileURLToPath } from 'url';
 
 const scopes = fs
   .readdirSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'))
-  .map(i => i.toLowerCase());
+  .map((item) => item.toLowerCase());
 
 const gitStatus = execSync('git status --porcelain || true').toString().trim().split('\n');
 
 const scopeComplete = gitStatus
-  .find(r => ~r.indexOf('M  src'))
+  .find((r) => ~r.indexOf('M  src'))
   ?.replace(/(\/)/g, '%%')
   ?.match(/src%%((\w|-)*)/)?.[1];
 
 const subjectComplete = gitStatus
-  .find(r => ~r.indexOf('M  src'))
+  .find((r) => ~r.indexOf('M  src'))
   ?.replace(/\//g, '%%')
   ?.match(/src%%((\w|-)*)/)?.[1];
 
@@ -33,8 +33,8 @@ const Configuration = {
     // 如果 defaultScope 与在选择范围列表项中的 value 相匹配就会进行星标置顶操作。
     defaultScope: scopeComplete,
     // 描述预设值
-    defaultSubject: subjectComplete && `[${subjectComplete}] `,
-  },
+    defaultSubject: subjectComplete && `[${subjectComplete}] `
+  }
 };
 
 export default Configuration;

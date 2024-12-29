@@ -18,6 +18,6 @@ export function createErrorMsg(msg: string) {
 export function useMessage() {
   return {
     createErrorModal,
-    createErrorMsg,
+    createErrorMsg
   };
 }

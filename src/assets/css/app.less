@@ -1,0 +1,43 @@
+@import url('./reset.less');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background: #f0f2f5;
+}
+
+.supense-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* 灰色 */
+.html-grey {
+  filter: grayscale(100%);
+}
+/* 色弱 */
+.html-weakness {
+  filter: invert(80%);
+}

@@ -18,7 +18,7 @@ const initialState: AppConfigMode = {
   locale: 'zh-CN',
   themeMode: 'light',
   sidebarMode: 'vertical',
-  color: '#409eff',
+  color: '#409eff'
 };
 
 export const appSlice = createSlice({
@@ -39,8 +39,8 @@ export const appSlice = createSlice({
     },
     setAppColor: (state, action: PayloadAction<string>) => {
       state.color = action.payload;
-    },
-  },
+    }
+  }
 });
 // 每个 case reducer 函数会生成对应的 Action creators
 export const { setAppCollapsed, setAppColor, setAppLocale, setAppSidebarMode, setAppThemeMode } = appSlice.actions;

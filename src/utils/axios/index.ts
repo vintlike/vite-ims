@@ -33,7 +33,7 @@ const interceptor: AxiosInterceptor = {
           const toData = {
             code: 1,
             data,
-            message: 'ok',
+            message: 'ok'
           };
           return toData;
         }
@@ -54,18 +54,22 @@ const interceptor: AxiosInterceptor = {
    */
   beforeRequestHook: (config, options) => {
     const { urlPrefix } = options;
-    if (urlPrefix && isString(urlPrefix)) config.url = `${urlPrefix}${config.url}`;
+    if (urlPrefix && isString(urlPrefix)) {
+      config.url = `${urlPrefix}${config.url}`;
+    }
     return config;
   },
 
   /**
    * @description: 请求拦截器处理
    */
-  requestInterceptors: config => {
+  requestInterceptors: (config) => {
     const { requestOptions } = config;
     if (requestOptions?.withToken) {
-      (config as Recordable).headers._token = 'myToken';
-      if (requestOptions?.specialToken) (config as Recordable).headers._token = requestOptions?.specialToken;
+      config.headers._token = 'myToken';
+      if (requestOptions?.specialToken) {
+        config.headers._token = requestOptions?.specialToken;
+      }
     }
 
     return config;
@@ -74,14 +78,14 @@ const interceptor: AxiosInterceptor = {
   /**
    * @description: 请求拦截器错误处理
    */
-  requestInterceptorsCatch: error => {
+  requestInterceptorsCatch: (error) => {
     return error;
   },
 
   /**
    * @description: 响应拦截器处理
    */
-  responseInterceptors: res => {
+  responseInterceptors: (res) => {
     return res;
   },
 
@@ -93,7 +97,7 @@ const interceptor: AxiosInterceptor = {
     const errorMessageMode = config.requestOptions.errorMessageMode || 'none';
     checkStatus(response ? response.status : 404, message, errorMessageMode);
     return error;
-  },
+  }
 };
 
 function createAxios(opt?: Partial<CreateAxiosOptions>) {
@@ -108,10 +112,10 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
       // 配置项（需要在拦截器中做的处理），下面的选项都可以在独立的接口请求中覆盖
       requestOptions: {
         withToken: true,
-        errorMessageMode: 'message',
-      },
+        errorMessageMode: 'message'
+      }
     },
-    ...(opt || {}),
+    ...(opt || {})
   });
 }
 export const deffHttp = createAxios();

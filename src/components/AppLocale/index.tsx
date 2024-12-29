@@ -8,16 +8,16 @@ import SvgIcon from '../SvgIcon';
 
 const Locale = memo(() => {
   const dispatch = useAppDispatch();
-  const locale = useAppSelector(state => state.app.locale);
+  const locale = useAppSelector((state) => state.app.locale);
 
   const menuItems: MenuProps['items'] = useMemo(() => {
     return [
       { label: '中文', key: 'zh-CN', disabled: locale === 'zh-CN' }, // 菜单项务必填写 key
-      { label: 'English', key: 'en-US', disabled: locale === 'en-US' },
+      { label: 'English', key: 'en-US', disabled: locale === 'en-US' }
     ];
   }, [locale]);
 
-  const menuClick: MenuProps['onClick'] = info => {
+  const menuClick: MenuProps['onClick'] = (info) => {
     dispatch(setAppLocale(info.key as LocaleType));
   };
 

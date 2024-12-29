@@ -24,7 +24,7 @@ interface RouteState {
 const initialState: RouteState = {
   asyncRouter: [],
   // levelAsyncRouter: [],
-  multiTabs: [],
+  multiTabs: []
 };
 
 export const routeSlice = createSlice({
@@ -37,7 +37,7 @@ export const routeSlice = createSlice({
     },
     setStoreMultiTabs: (state, action: PayloadAction<{ type: 'add' | 'delete' | 'update'; tabs: MultiTabsType }>) => {
       const { type, tabs } = action.payload;
-      const tabIndex = state.multiTabs.findIndex(i => i.key === tabs.key);
+      const tabIndex = state.multiTabs.findIndex((item) => item.key === tabs.key);
       switch (type) {
         case 'add':
           if (tabIndex === -1) state.multiTabs.push(tabs);
@@ -51,8 +51,8 @@ export const routeSlice = createSlice({
         default:
           break;
       }
-    },
-  },
+    }
+  }
 });
 // 每个 case reducer 函数会生成对应的 Action creators
 export const { setStoreAsyncRouter, setStoreMultiTabs } = routeSlice.actions;

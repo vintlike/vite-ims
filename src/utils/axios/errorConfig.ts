@@ -5,6 +5,6 @@ export const errorData = (res: AxiosResponse<Result<any>>) => {
   return {
     data: null,
     message: res.data.message,
-    code: res.data.code,
+    code: res.data.code
   };
 };

@@ -5,5 +5,5 @@
   "login.passwordRules": "请输入您的密码！",
   "login.rememberPassword": "记住密码",
   "login.userNameRules": "请输入您的用户名！",
-  "login.username": "用户名：admin"
+  "login.userName": "用户名：admin"
 }
