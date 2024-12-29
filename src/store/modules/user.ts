@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { UseInfoType } from '@/services/useInfo';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-interface UserSliceType {
+export interface UserSliceType {
   userInfo?: UseInfoType;
   power?: UseInfoType['power'];
 }

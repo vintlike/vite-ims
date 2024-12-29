@@ -2,9 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { LocaleType } from '@/locales';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+/**
+ * 主题模式：深色、浅色
+ */
 export type ThemeMode = 'dark' | 'light';
+/**
+ * 侧边栏模式：水平、垂直、混合
+ */
 export type SidebarMode = 'vertical' | 'horizontal' | 'blend';
 
+/**
+ * 应用配置
+ */
 export interface AppConfigMode {
   collapsed: boolean;
   locale: LocaleType;

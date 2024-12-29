@@ -1,8 +1,8 @@
 import { deffHttp } from '@/utils/axios';
 
 export interface UseInfoType {
-  name: string;
-  userid: string;
+  userName: string;
+  userId: string;
   email: string;
   signature: string;
   introduction: string;
@@ -11,11 +11,11 @@ export interface UseInfoType {
   power: 'test' | 'admin';
 }
 
-export const getUserInfo = (user: string, pwd: string) =>
+export const getUserInfo = (userName: string, password: string) =>
   deffHttp.post<UseInfoType>(
     {
       url: '/mock_api/login',
-      data: { userName: user, password: pwd }
+      data: { userName, password }
     },
     { errorMessageMode: 'modal', withToken: false }
   );

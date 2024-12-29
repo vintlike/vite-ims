@@ -6,7 +6,7 @@ enum Api {
 }
 
 interface Param {
-  name: string;
+  userName: string;
 }
 
 export const getRouteApi = (data: Param) => deffHttp.post<AsyncRouteType[]>({ url: Api.ROUTE_LIST, data });

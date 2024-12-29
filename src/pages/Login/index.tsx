@@ -45,7 +45,10 @@ const Login = memo(() => {
   return (
     <div
       className="w-full h-full flex flex-col items-center justify-center relative"
-      style={{ backgroundColor: globalTheme.token.colorBgContainer, color: globalTheme.token.colorText }}
+      style={{
+        backgroundColor: globalTheme.token.colorBgContainer,
+        color: globalTheme.token.colorText
+      }}
     >
       <div className="flex flex-row justify-center items-center absolute top-3 right-3 gap-3">
         <AppLocale />
@@ -65,13 +68,23 @@ const Login = memo(() => {
         >
           <Form.Item<LoginForm>
             name="userName"
-            rules={[{ required: true, message: intl.formatMessage({ id: 'login.userNameRules' }) }]}
+            rules={[
+              {
+                required: true,
+                message: intl.formatMessage({ id: 'login.userNameRules' })
+              }
+            ]}
           >
             <Input prefix={<UserOutlined />} placeholder={intl.formatMessage({ id: 'login.userName' })} allowClear />
           </Form.Item>
           <Form.Item<LoginForm>
             name="password"
-            rules={[{ required: true, message: intl.formatMessage({ id: 'login.passwordRules' }) }]}
+            rules={[
+              {
+                required: true,
+                message: intl.formatMessage({ id: 'login.passwordRules' })
+              }
+            ]}
           >
             <Input.Password
               prefix={<LockOutlined />}

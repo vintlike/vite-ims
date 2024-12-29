@@ -40,13 +40,19 @@ export const routeSlice = createSlice({
       const tabIndex = state.multiTabs.findIndex((item) => item.key === tabs.key);
       switch (type) {
         case 'add':
-          if (tabIndex === -1) state.multiTabs.push(tabs);
+          if (tabIndex === -1) {
+            state.multiTabs.push(tabs);
+          }
           break;
         case 'delete':
-          if (tabIndex !== -1) state.multiTabs.splice(tabIndex, 1);
+          if (tabIndex !== -1) {
+            state.multiTabs.splice(tabIndex, 1);
+          }
           break;
         case 'update':
-          if (tabIndex !== -1) state.multiTabs[tabIndex] = tabs;
+          if (tabIndex !== -1) {
+            state.multiTabs[tabIndex] = tabs;
+          }
           break;
         default:
           break;

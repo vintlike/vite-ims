@@ -49,11 +49,12 @@ export const getIntl = (locale?: LocaleType, changeIntl?: boolean) => {
     });
   }
   // 使用 zh-CN
-  if (localeConfig['zh-CN'])
+  if (localeConfig['zh-CN']) {
     return createIntl({
       locale: 'zh-CN',
       messages: localeConfig['zh-CN']
     });
+  }
 
   // 如果还没有，返回一个空的
   return createIntl({
