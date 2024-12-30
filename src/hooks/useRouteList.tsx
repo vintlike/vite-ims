@@ -25,7 +25,7 @@ export const useRouteList = () => {
           rtItem.children.push({
             index: true,
             loader() {
-              return redirect(item.redirect || '');
+              return redirect((item.redirect as string) || '');
             }
           });
         }
