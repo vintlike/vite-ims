@@ -52,27 +52,29 @@ function App() {
   }, [asyncRouter]);
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: color || '#409eff'
-        },
-        algorithm: themeMode === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm
-      }}
-      locale={getLocale}
-    >
-      <IntlProvider locale={locale} messages={localeConfig[locale]}>
-        {loading ? (
-          <LayoutSpin position="fixed" />
-        ) : (
-          // <BrowserRouter>
-          <Suspense fallback={<LayoutSpin />}>
-            <RouteView />
-          </Suspense>
-          // </BrowserRouter>
-        )}
-      </IntlProvider>
-    </ConfigProvider>
+    <div className="app">
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: color || '#409eff'
+          },
+          algorithm: themeMode === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm
+        }}
+        locale={getLocale}
+      >
+        <IntlProvider locale={locale} messages={localeConfig[locale]}>
+          {loading ? (
+            <LayoutSpin position="fixed" />
+          ) : (
+            // <BrowserRouter>
+            <Suspense fallback={<LayoutSpin />}>
+              <RouteView />
+            </Suspense>
+            // </BrowserRouter>
+          )}
+        </IntlProvider>
+      </ConfigProvider>
+    </div>
   );
 }
 

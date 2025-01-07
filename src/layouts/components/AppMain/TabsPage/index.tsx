@@ -56,7 +56,9 @@ const TabsPage = memo((_props: Props) => {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      if (asyncRouter.length) navigate(asyncRouter[0].path);
+      if (asyncRouter.length) {
+        navigate(asyncRouter[0].path);
+      }
       return;
     }
 

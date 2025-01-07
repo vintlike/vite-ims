@@ -15,7 +15,7 @@ import './index.less';
 
 const { Header } = Layout;
 
-const Navbart = memo(() => {
+const AppHeader = memo(() => {
   const dispatch = useAppDispatch();
   const { collapsed, sidebarMode } = useAppSelector(
     (state) => ({
@@ -71,4 +71,4 @@ const Navbart = memo(() => {
   return render();
 });
 
-export default Navbart;
+export default AppHeader;

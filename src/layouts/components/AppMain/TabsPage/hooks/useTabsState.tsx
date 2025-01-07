@@ -45,9 +45,15 @@ export const useTabsState = (pathKey: string, openDropdown: boolean) => {
 
     const disableCodesForOnlyTab = ['close', 'closeOther', 'closeLeftOther', 'closeRightOther'];
 
-    if (isFirstTab && code === 'closeLeftOther') return true;
-    if (isLastTab && code === 'closeRightOther') return true;
-    if (isOnlyTab && disableCodesForOnlyTab.includes(code)) return true;
+    if (isFirstTab && code === 'closeLeftOther') {
+      return true;
+    }
+    if (isLastTab && code === 'closeRightOther') {
+      return true;
+    }
+    if (isOnlyTab && disableCodesForOnlyTab.includes(code)) {
+      return true;
+    }
 
     return false;
   };
