@@ -56,7 +56,7 @@
 - fix(layout): 🐛 [layout] tabs size="small" ([7517410](https://github.com/jsxiaosi/react-xs-admin/commit/7517410))
 - fix(layout): 🐛 keepalive Authority judgment ([a4e9aee](https://github.com/jsxiaosi/react-xs-admin/commit/a4e9aee))
 - fix(layout): 🐛 layoutApp ([2c8f484](https://github.com/jsxiaosi/react-xs-admin/commit/2c8f484))
-- fix(layout): 🐛 memu 国际化 ([cbb17c7](https://github.com/jsxiaosi/react-xs-admin/commit/cbb17c7))
+- fix(layout): 🐛 menu 国际化 ([cbb17c7](https://github.com/jsxiaosi/react-xs-admin/commit/cbb17c7))
 - fix(layout): 🐛 repair that the switch permission page did not refresh ([7d2d898](https://github.com/jsxiaosi/react-xs-admin/commit/7d2d898))
 - fix(layout): 🐛 sidebar ([a85089b](https://github.com/jsxiaosi/react-xs-admin/commit/a85089b))
 - fix(layout): 🐛 sitebar ([7636e1d](https://github.com/jsxiaosi/react-xs-admin/commit/7636e1d))

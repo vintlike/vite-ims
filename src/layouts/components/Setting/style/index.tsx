@@ -5,7 +5,7 @@ export const getSidebarMode = (token: GlobalToken): CSSObject => {
   return {
     padding: `0 ${token.paddingSM}px`,
     color: token.colorText,
-    '.sidebar_seting': {
+    '.sidebar_setting': {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',

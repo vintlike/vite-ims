@@ -5,8 +5,8 @@
  *   |-header
  *   |   |--header-head (logo)
  *   |   |--header-body (menu)
- *   |   |--header-foot (userinfo)
- *   |-main
+ *   |   |--header-foot (action list)
+ *   |-main (container)
  *   |   |--aside
  *   |   |    |---aside-head (aside menu title)
  *   |   |    |---aside-body (aside menu)
@@ -18,235 +18,9 @@
  *   |-footer
  *   |   |--copyright
  *
- * App模块结构
- *
- * Section结构：
- * section (container)
- *   |-head (breadcrumb)
- *   |-main (table、form)
- *   |   |--aside (setting)
- *   |   |--content (table、form)
- *   |-foot (operate)
- *
- * App搜索表单
- *
  */
 
-.containerCss {
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-  position: relative;
-  min-height: 0;
-  margin: 0 auto;
-
-  &.is-horizontal {
-    flex-direction: row;
-  }
-
-  &.is-vertical {
-    flex-direction: column;
-  }
-
-  &.is-abs {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-}
-
-.headerCss {
-  display: flex;
-  flex-direction: row;
-  flex: 0 0 auto;
-
-  position: relative;
-}
-
-.mainCss {
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-  position: relative;
-  min-height: 0;
-
-  &.is-horizontal {
-    flex-direction: row;
-  }
-}
-
-.footerCss {
-  display: flex;
-  flex-direction: row;
-  flex: 0 0 auto;
-
-  position: relative;
-}
-
-.siderCss {
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  width: 200px;
-  min-width: 0;
-  overflow: hidden;
-
-  transition: all 0.2s;
-  /* box-shadow: inset -1px 0 1px rgba(0, 0, 0, 0.06); */
-}
-
-.contentCss {
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-  position: relative;
-  min-height: 0;
-}
-
-.contentHeadCss {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.contentFootCss {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.contentBodyCss {
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-
-  position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-/**
-   * app-layout: 项目整体布局-上中（左右）下
-   * section-layout: 项目模块整体布局-上中（左右）下
-   */
-@layout-module-prefix-cls: ~'module-layout';
-
-.@{layout-module-prefix-cls} {
-  .containerCss();
-
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  flex: 1;
-  margin-bottom: 20px;
-  background-color: #fff;
-  border-radius: 4px;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  &-header {
-    .headerCss();
-
-    &-head {
-      .contentHeadCss();
-    }
-    &-body {
-      .contentBodyCss();
-      padding: 0 20px;
-
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-    &-foot {
-      .contentFootCss();
-    }
-  }
-
-  &-main {
-    .mainCss();
-
-    max-height: 100%;
-    overflow: hidden;
-  }
-
-  &-footer {
-    .footerCss();
-  }
-
-  &-sider {
-    .siderCss();
-
-    overflow: hidden;
-
-    &-head {
-      .contentHeadCss();
-    }
-
-    &-body {
-      .contentBodyCss();
-    }
-
-    &-foot {
-      .contentFootCss();
-    }
-  }
-
-  &-content {
-    .contentCss();
-
-    overflow: hidden;
-
-    &-head {
-      .contentHeadCss();
-    }
-
-    &-body {
-      .contentBodyCss();
-
-      padding: 20px;
-    }
-
-    &-foot {
-      .contentFootCss();
-    }
-  }
-
-  &-sider,
-  &-content {
-    &:not(:first-of-type) {
-      margin-left: 15px;
-    }
-
-    & + & {
-      position: relative;
-    }
-  }
-}
-
-/** 操作条 */
-.operate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  padding: 12px 20px;
-
-  &.is-left {
-    justify-content: flex-start;
-  }
-
-  &.is-right {
-    justify-content: flex-end;
-  }
-}
-
+/** 边框 */
 .is-border {
   position: relative;
 
@@ -301,4 +75,128 @@
       border-right-width: 1px;
     }
   }
+}
+
+.is-overflow {
+  margin-top: -0.1px;
+  margin-bottom: -0.1px;
+  padding-top: 0.1px;
+  padding-bottom: 0.1px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/** 菜单折叠按钮 */
+.collapsed-switch {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/** 通用布局 */
+.layout {
+  &,
+  &-header,
+  &-footer,
+  &-sider,
+  &-content,
+  &-content-head,
+  &-content-body,
+  &-content-foot {
+    position: relative;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+  }
+
+  min-width: 0;
+  min-height: 0;
+
+  &.is-horizontal {
+    flex-direction: row;
+  }
+
+  &.is-abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  /** 头部、尾部 */
+  &-header,
+  &-footer {
+    flex-direction: row;
+    flex: 0 0 auto;
+    padding: 0 20px;
+  }
+
+  &-header {
+    > *:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+
+  /** 侧边栏 */
+  &-sider {
+    .is-overflow;
+    flex: 0 0 auto;
+    min-width: 0;
+    transition: all 0.2s ease-in-out;
+
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
+  }
+
+  /** 内容区 */
+  &-content {
+    height: 100%;
+    .is-overflow;
+
+    &.is-horizontal {
+      flex-direction: row;
+    }
+
+    &-head,
+    &-foot {
+      flex: 0 0 auto;
+      flex-direction: row;
+    }
+
+    &-body {
+      .is-overflow;
+    }
+  }
+
+  /** 操作条 */
+  &-operate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 20px;
+
+    &.is-left {
+      justify-content: flex-start;
+    }
+
+    &.is-right {
+      justify-content: flex-end;
+    }
+  }
+}
+
+/**
+ * app-layout: 项目整体布局-上中（左右）下
+ */
+@layoutModulePrefix: ~'app-layout';
+
+.@{layoutModulePrefix} {
+  .layout;
 }

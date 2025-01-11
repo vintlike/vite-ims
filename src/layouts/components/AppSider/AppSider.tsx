@@ -8,12 +8,11 @@ import { memo, useEffect, useMemo, useState } from 'react';
 import { shallowEqual } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import type { MenuProps, SiderProps } from 'antd';
-import AppLogo from '../../AppLogo';
-import './index.less';
+import { AppLogo } from '../AppLogo';
 
 const { Sider } = Layout;
 
-const Sidebar = memo(() => {
+const AppSider = memo(() => {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
   const { collapsed, sidebarMode } = useAppSelector(
@@ -65,18 +64,22 @@ const Sidebar = memo(() => {
   }, [sidebarMode, pathname, menuList]);
 
   const MenuRender = (
-    <>
-      <AppLogo />
-      <Menu
-        mode="inline"
-        openKeys={openKeys}
-        onOpenChange={onOpenChange}
-        selectedKeys={[pathname]}
-        items={menuItems as MenuProps['items']}
-        onClick={(e) => navigate(e.key)}
-        style={{ border: 'none' }}
-      />
-    </>
+    <div className="layout-content">
+      <div className="layout-content-head">
+        <AppLogo />
+      </div>
+      <div className="layout-content-body">
+        <Menu
+          mode="inline"
+          openKeys={openKeys}
+          onOpenChange={onOpenChange}
+          selectedKeys={[pathname]}
+          items={menuItems as MenuProps['items']}
+          onClick={(e) => navigate(e.key)}
+          style={{ border: 'none' }}
+        />
+      </div>
+    </div>
   );
 
   return (
@@ -85,10 +88,10 @@ const Sidebar = memo(() => {
         <>
           {responsive.sm ? (
             <Sider
-              className="sidebar"
+              className="layout-sider"
               breakpoint="lg"
-              collapsedWidth={55}
-              width={210}
+              collapsedWidth={60}
+              width={200}
               theme="light"
               collapsed={collapsed}
               onBreakpoint={onBreakpoint}
@@ -102,7 +105,7 @@ const Sidebar = memo(() => {
             </Sider>
           ) : (
             <Drawer
-              width={210}
+              width={200}
               placement="left"
               destroyOnClose={false}
               styles={{ body: { padding: 0, height: '100%' } }}
@@ -110,7 +113,7 @@ const Sidebar = memo(() => {
               onClose={() => dispatch(setAppCollapsed(!collapsed))}
               open={!collapsed}
             >
-              <div className="sidebar">{MenuRender}</div>
+              <div className="layout-sider">{MenuRender}</div>
             </Drawer>
           )}
         </>
@@ -119,4 +122,4 @@ const Sidebar = memo(() => {
   );
 });
 
-export default Sidebar;
+export default AppSider;

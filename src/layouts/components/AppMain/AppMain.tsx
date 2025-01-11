@@ -3,7 +3,6 @@ import { Layout } from 'antd';
 import { KeepAlive, useKeepAliveRef } from 'keepalive-for-react';
 import { memo, Suspense, useMemo } from 'react';
 import { useLocation, useOutlet } from 'react-router';
-import { getAppMainStyle } from './style';
 import TabsPage from './TabsPage';
 
 const { Content } = Layout;
@@ -20,11 +19,15 @@ const AppMain = memo(() => {
   const outlet = useOutlet();
 
   return (
-    <Content css={getAppMainStyle()}>
+    <Content className="layout-main">
       <KeepAlive aliveRef={aliveRef} activeCacheKey={activeCacheKey} exclude={[/^\/refresh\//]} max={maxLen}>
-        <TabsPage maxLen={maxLen} />
-        <div className="main-content">
-          <Suspense fallback={<LayoutSpin />}>{outlet}</Suspense>
+        <div className="layout-content">
+          <div className="layout-content-head">
+            <TabsPage maxLen={maxLen} />
+          </div>
+          <div className="layout-content-body" style={{ padding: 20 }}>
+            <Suspense fallback={<LayoutSpin />}>{outlet}</Suspense>
+          </div>
         </div>
       </KeepAlive>
     </Content>

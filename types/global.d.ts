@@ -27,3 +27,9 @@ interface Res<T = any> {
   message?: string;
   enMessage?: string;
 }
+
+interface LabelValue<T = string> {
+  label: string;
+  value: T;
+  [key: string]: any;
+}

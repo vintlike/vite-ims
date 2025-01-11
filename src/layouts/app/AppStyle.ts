@@ -1,16 +1,5 @@
 import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
-import {
-  ContainerCss,
-  ContentBodyCss,
-  ContentCss,
-  ContentFootCss,
-  ContentHeadCss,
-  FooterCss,
-  HeaderCss,
-  MainCss,
-  SiderCss
-} from '../LayoutStyle';
 
 export const LogoLayout = styled.div`
   &.logo {
@@ -34,12 +23,6 @@ export const LogoLayout = styled.div`
       font-size: 22px;
     }
   }
-`;
-
-export const CopyrightLayout = styled.div`
-  line-height: 40px;
-  font-size: 14px;
-  text-align: center;
 `;
 
 export const AccountLayout = styled.div`

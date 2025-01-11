@@ -3,7 +3,7 @@ import { Image, theme } from 'antd';
 import { memo } from 'react';
 import './index.less';
 
-const AppLogo = memo(() => {
+export const AppLogo = memo(() => {
   const globalTheme = theme.useToken();
 
   return (
@@ -17,5 +17,3 @@ const AppLogo = memo(() => {
     </div>
   );
 });
-
-export default AppLogo;

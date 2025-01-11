@@ -3,8 +3,14 @@ import type { GlobalToken } from 'antd';
 
 export const getTabsStyle = (token: GlobalToken): CSSObject => {
   return {
+    '&': {
+      flex: 1
+    },
     '& .ant-tabs-nav::before': {
       borderBottom: `1px solid ${token.colorBorder}`
+    },
+    '& .ant-tabs-nav .ant-tabs-nav-wrap': {
+      paddingLeft: '20px'
     },
     '& .ant-tabs-nav .ant-tabs-tab': {
       padding: 0,

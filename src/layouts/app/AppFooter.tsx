@@ -1,6 +1,6 @@
 import { memo } from 'react';
+import { Copyright } from '../components/Copyright';
 import { FooterLayout } from './AppStyle';
-import { Copyright } from './components/Copyright';
 
 const AppFooter = memo(() => {
   return (

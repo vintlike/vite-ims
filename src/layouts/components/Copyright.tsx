@@ -1,4 +1,11 @@
-import { CopyrightLayout } from '../AppStyle';
+import { styled } from 'styled-components';
+
+export const CopyrightLayout = styled.div`
+  line-height: 40px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+`;
 
 interface Props {
   style?: React.CSSProperties;

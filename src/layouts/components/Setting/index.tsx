@@ -48,7 +48,7 @@ const Setting = memo(() => {
       >
         <div className="setting" css={getSidebarMode(globalTheme.token)}>
           <Divider>{intl.formatMessage({ id: 'layout.setting.layoutSettings' })}</Divider>
-          <div className="sidebar_seting">
+          <div className="sidebar_setting">
             {sidebarSetting.map((item) => {
               return (
                 <Tooltip placement="bottom" title={item.label} key={item.value}>

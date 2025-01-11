@@ -1,6 +1,6 @@
 import logo from '@/assets/images/logo.png';
-import AppLocale from '@/components/AppLocale';
-import AppTheme from '@/components/AppTheme';
+import { AppLocale } from '@/layouts/components/AppLocal';
+import { AppTheme } from '@/layouts/components/AppTheme';
 import { useLocale } from '@/locales';
 import { initAsyncRoute } from '@/router/RouteUtil';
 import { getUserInfo } from '@/services/useInfo';
