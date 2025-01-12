@@ -3,6 +3,7 @@ import { setAppCollapsed } from '@/store/modules/app';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { memo } from 'react';
 import { shallowEqual } from 'react-redux';
+import './style.less';
 
 export const CollapsedSwitch = memo(() => {
   const dispatch = useAppDispatch();

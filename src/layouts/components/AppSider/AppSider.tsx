@@ -12,7 +12,7 @@ import { AppLogo } from '../AppLogo';
 
 const { Sider } = Layout;
 
-const AppSider = memo(() => {
+export const AppSider = memo(() => {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
   const { collapsed, sidebarMode } = useAppSelector(
@@ -121,5 +121,3 @@ const AppSider = memo(() => {
     </>
   );
 });
-
-export default AppSider;

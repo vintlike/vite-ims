@@ -3,7 +3,7 @@ import { useResponsive } from 'ahooks';
 import { Layout, Space, theme } from 'antd';
 import { memo } from 'react';
 import { shallowEqual } from 'react-redux';
-import { AppAccount } from './components/AppAccount/AppAccout';
+import { AppAccount } from './components/AppAccout';
 import { AppLocale } from './components/AppLocal';
 import { AppLogo } from './components/AppLogo';
 import { AppTheme } from './components/AppTheme';

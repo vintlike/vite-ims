@@ -6,7 +6,7 @@ import { removeStorage } from '@/utils/storage';
 import { Avatar, Dropdown } from 'antd';
 import { useNavigate } from 'react-router';
 import type { MenuProps } from 'antd';
-import { getAccountStyle } from './style';
+import './style.less';
 
 const accountMenus: LabelValue<number | string>[] = [
   { label: '角色', value: 'role' },
@@ -14,7 +14,6 @@ const accountMenus: LabelValue<number | string>[] = [
 ];
 
 export const AppAccount = () => {
-  const { AccountDiv } = getAccountStyle();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -45,7 +44,7 @@ export const AppAccount = () => {
   };
 
   return (
-    <AccountDiv className="cursor">
+    <div className="app-account">
       <Dropdown
         menu={{
           items,
@@ -55,6 +54,6 @@ export const AppAccount = () => {
       >
         <Avatar size="large" src={avatar} />
       </Dropdown>
-    </AccountDiv>
+    </div>
   );
 };

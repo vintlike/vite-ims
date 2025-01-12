@@ -4,7 +4,7 @@ import React from 'react';
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
 import AppMain from './components/AppMain/AppMain';
-import AppSider from './components/AppSider/AppSider';
+import { AppSider } from './components/AppSider/AppSider';
 import './layout.less';
 
 const LayoutApp: React.FC = () => {
