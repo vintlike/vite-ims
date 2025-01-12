@@ -48,6 +48,7 @@
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@emotion/babel-plugin": "^11.13.5",

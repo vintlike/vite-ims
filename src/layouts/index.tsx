@@ -12,12 +12,12 @@ const LayoutApp: React.FC = () => {
 
   return (
     <Layout className="layout" style={{ color: globalTheme.token.colorText }}>
-      <AppHeader />
+      <AppSider />
       <Layout>
-        <AppSider />
+        <AppHeader />
         <AppMain />
+        <AppFooter />
       </Layout>
-      <AppFooter />
     </Layout>
   );
 };
