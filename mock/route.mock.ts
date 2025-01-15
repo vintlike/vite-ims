@@ -7,6 +7,10 @@ const power = [
     id: 'Home'
   },
   {
+    path: '/map',
+    id: 'Map'
+  },
+  {
     path: '/nested',
     id: 'Nested',
     children: [

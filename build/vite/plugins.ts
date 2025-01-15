@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react';
 import UnoCSS from 'unocss/vite';
+import envCompatible from 'vite-plugin-env-compatible';
 // import react from '@vitejs/plugin-react-swc';
 import type { ConfigEnv, PluginOption } from 'vite';
 import { mockPlugin } from './plugins/mockPlugin';
@@ -17,7 +18,8 @@ export function createVitePlugins(_isBuild = false, _configEnv: ConfigEnv) {
     UnoCSS(),
     svgIconsPlugin(),
     svgrPlugin(),
-    mockPlugin()
+    mockPlugin(),
+    envCompatible()
   ];
 
   return vitePlugins;

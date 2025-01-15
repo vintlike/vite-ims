@@ -7,6 +7,8 @@ export default jsxiaosi({
     usePrettierrc: true
   },
   rules: {
-    'react/no-unknown-property': ['error', { ignore: ['css'] }]
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    'ts/no-unused-vars': 'off',
+    'no-console': 'off'
   }
 });

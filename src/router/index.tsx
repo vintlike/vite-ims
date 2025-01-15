@@ -8,6 +8,7 @@ import {
   DetailsPage,
   DetailsParams,
   Home,
+  Map,
   Menu1_1,
   Menu1_2,
   Permissions,
@@ -23,6 +24,15 @@ export const defaultRoutes: RouteItem[] = [
     element: <Home />,
     meta: {
       label: <FormattedMessage id="layout.menu.home" />,
+      icon: <HomeOutlined />
+    }
+  },
+  {
+    path: '/map',
+    id: 'Map',
+    element: <Map />,
+    meta: {
+      label: <FormattedMessage id="layout.menu.map" />,
       icon: <HomeOutlined />
     }
   },
