@@ -9,6 +9,7 @@ export default jsxiaosi({
   rules: {
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'ts/no-unused-vars': 'off',
-    'no-console': 'off'
+    'no-console': 'off',
+    'no-cond-assign': 'off'
   }
 });

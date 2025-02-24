@@ -7,8 +7,8 @@ import {
   DetailsInfo,
   DetailsPage,
   DetailsParams,
+  Fence,
   Home,
-  Map,
   Menu1_1,
   Menu1_2,
   Permissions,
@@ -28,11 +28,11 @@ export const defaultRoutes: RouteItem[] = [
     }
   },
   {
-    path: '/map',
-    id: 'Map',
-    element: <Map />,
+    path: '/fence',
+    id: 'Fence',
+    element: <Fence />,
     meta: {
-      label: <FormattedMessage id="layout.menu.map" />,
+      label: <FormattedMessage id="layout.menu.fence" />,
       icon: <HomeOutlined />
     }
   },

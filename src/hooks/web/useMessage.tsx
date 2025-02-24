@@ -3,8 +3,8 @@ import { message, Modal } from 'antd';
 
 import type { ModalFuncProps } from 'antd';
 
-function createElMessageBox(messageg: string, title: string, options: ModalFuncProps) {
-  Modal.error({ title, content: messageg, ...options });
+function createElMessageBox(msg: string, title: string, options: ModalFuncProps) {
+  Modal.error({ title, content: msg, ...options });
 }
 
 export function createErrorModal(msg: string) {
