@@ -30,7 +30,7 @@ export default defineFakeRoute([
     method: 'post',
     response: ({ body }: { body: Recordable }) => {
       const { userName, password } = body;
-      if (userName === 'admin' && password === 'admin123') {
+      if (userName === 'admin' && password === 'admin') {
         userInfo.token = genID(16);
         return {
           data: userInfo,

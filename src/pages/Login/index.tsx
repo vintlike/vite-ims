@@ -57,7 +57,7 @@ const Login = memo(() => {
       <div className="p-10" style={{ boxShadow: '0 15px 25px #0009' }}>
         <div className="mb-10 flex flex-row items-center justify-center ">
           <Image src={logo} width={44} height={44} preview={false} />
-          <h2 className="m-0 ml-4">React Xs Admin</h2>
+          <h2 className="m-0 ml-4">IMS</h2>
         </div>
         <Form
           className="w-[360px]"

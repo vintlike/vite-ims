@@ -1,7 +1,7 @@
 {
   "login.button": "Login",
   "login.forgotPassword": "Forgot password",
-  "login.password": "Password：admin123",
+  "login.password": "Password：admin",
   "login.passwordRules": "Please input your Password!",
   "login.rememberPassword": "Remember password",
   "login.userNameRules": "Please input your Username!",
