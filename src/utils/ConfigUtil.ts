@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import { merge } from 'lodash-es';
 import type { RouteItem } from '@/router/RouteTypes';
 
 export type ILocales = 'zh-CN' | 'en-US';

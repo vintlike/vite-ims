@@ -10,6 +10,9 @@ export default jsxiaosi({
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'ts/no-unused-vars': 'off',
     'no-console': 'off',
-    'no-cond-assign': 'off'
+    'no-cond-assign': 'off',
+    'prefer-promise-reject-errors': 'off',
+    'no-prototype-builtins': 'off',
+    'ts/no-duplicate-enum-values': 'off'
   }
 });

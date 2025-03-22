@@ -1,0 +1,61 @@
+.gis {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  #gis-map {
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .gis-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    background-color: rgba(0, 0, 0, 0.6);
+    .gis-loading-text {
+      color: #fff;
+      margin-top: 8px;
+    }
+  }
+  .gis-search,
+  .gis-operate {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    z-index: 10;
+  }
+
+  .gis-search {
+    bottom: auto;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .leaflet-touch .leaflet-control-layers-toggle {
+    background-image: url('/src/assets/images/map/layers.png');
+    width: 30px;
+    height: 30px;
+  }
+
+  .leaflet-tooltip {
+    border-color: #008fcf;
+  }
+}

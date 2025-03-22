@@ -81,4 +81,4 @@ const showErrorMessage = (res: Res) => {
   return getLocale() === 'en-US' ? res?.enMessage : res?.message;
 };
 
-export { i18n as il8n, intl, pleaseEnter, pleaseSelect, showErrorMessage };
+export { i18n, intl, pleaseEnter, pleaseSelect, showErrorMessage };

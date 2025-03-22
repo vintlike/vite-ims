@@ -1,6 +1,6 @@
+import { styled } from '@/global';
 import { Tooltip } from 'antd';
 import React from 'react';
-import styled from 'styled-components';
 import type { TooltipProps } from 'antd';
 
 const TipTitleLayout = styled.div`
@@ -16,13 +16,13 @@ type Props = TooltipProps & {
 };
 
 export const CustomTooltip: React.FC<Props> = (props) => {
-  const { title, children, placement = 'topLeft', arrow, color, ...rest } = props;
+  const { title, children, placement = 'topLeft', arrowPointAtCenter, color, ...rest } = props;
   return (
     <Tooltip
       {...rest}
-      overlayStyle={{ maxWidth: 500 }}
+      styles={{ root: { maxWidth: 500 } }}
       placement={placement}
-      arrow={arrow ?? true}
+      arrow={arrowPointAtCenter ?? true}
       color={color ?? '#fff'}
       title={!title ? null : <TipTitleLayout>{title}</TipTitleLayout>}
     >

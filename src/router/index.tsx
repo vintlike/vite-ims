@@ -1,6 +1,12 @@
 import { FormattedMessage } from '@/components/FormattedMessage';
 import Layout from '@/layouts';
 import Authority from '@/layouts/Authority';
+import RingArea from '@/pages/Map/calcutation/RingArea';
+import Coordinate from '@/pages/Map/coordinate';
+import OsmIndex from '@/pages/Map/gis';
+import Geocoding from '@/pages/Map/lbs/geocoder/Geocoding';
+import GeoFence from '@/pages/Map/lbs/geocoder/GeoFence';
+import ReGeocoding from '@/pages/Map/lbs/geocoder/Regeocoding';
 import { AppstoreOutlined, DatabaseOutlined, HomeOutlined, UserSwitchOutlined } from '@ant-design/icons';
 import type { RouteItem } from '@/router/RouteTypes';
 import {
@@ -28,13 +34,60 @@ export const defaultRoutes: RouteItem[] = [
     }
   },
   {
-    path: '/fence',
-    id: 'Fence',
-    element: <Fence />,
+    path: '/map',
+    id: 'Map',
+    redirect: '/map/gis',
     meta: {
-      label: <FormattedMessage id="layout.menu.fence" />,
-      icon: <HomeOutlined />
-    }
+      label: <FormattedMessage id="layout.menu.map" />,
+      whiteList: true
+    },
+    children: [
+      {
+        path: 'geocoder',
+        id: 'Geocoder',
+        redirect: '/map/geocoder/geoFence',
+        meta: { label: <FormattedMessage id="layout.menu.geocoder" /> },
+        children: [
+          {
+            path: 'geoFence',
+            id: 'geoFence',
+            element: <GeoFence />,
+            meta: { label: <FormattedMessage id="layout.menu.geoFence" /> }
+          },
+          {
+            path: 'geocoding',
+            id: 'Geocoding',
+            element: <Geocoding />,
+            meta: { label: <FormattedMessage id="layout.menu.geocoding" /> }
+          },
+          {
+            path: 'regeocoding',
+            id: 'ReGeocoding',
+            element: <ReGeocoding />,
+            meta: { label: <FormattedMessage id="layout.menu.regeocoding" /> }
+          }
+        ]
+      },
+      {
+        path: 'gis',
+        id: 'Gis',
+        element: <OsmIndex />,
+        meta: { label: <FormattedMessage id="layout.menu.fence" /> }
+      },
+      {
+        path: 'coordinate',
+        id: 'Coordinate',
+        element: <Coordinate />,
+        meta: { label: <FormattedMessage id="layout.menu.coordinate" /> }
+      },
+
+      {
+        path: 'polygonArea',
+        id: 'PolygonArea',
+        element: <RingArea />,
+        meta: { label: <FormattedMessage id="layout.menu.polygonArea" /> }
+      }
+    ]
   },
   {
     path: '/nested',

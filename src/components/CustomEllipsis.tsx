@@ -1,6 +1,6 @@
+import { styled } from '@/global';
 import { getNodeText } from '@/utils/DomUtil';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
 import type { TooltipProps } from 'antd';
 import { CopyToClipboard } from './CopyToClipboard';
 import { CustomTooltip } from './CustomTooltip';

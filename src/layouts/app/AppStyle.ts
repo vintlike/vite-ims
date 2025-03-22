@@ -1,5 +1,16 @@
+import { styled } from '@/global';
 import { Layout, Menu } from 'antd';
-import styled from 'styled-components';
+import {
+  ContainerCss,
+  ContentBodyCss,
+  ContentCss,
+  ContentFootCss,
+  ContentHeadCss,
+  FooterCss,
+  HeaderCss,
+  MainCss,
+  SiderCss
+} from '../LayoutStyle';
 
 export const LogoLayout = styled.div`
   &.logo {

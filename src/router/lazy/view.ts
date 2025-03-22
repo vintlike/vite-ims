@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 export const Home = lazy(() => import('@/pages/Home'));
-export const Fence = lazy(() => import('@/pages/Fence'));
+export const Fence = lazy(() => import('@/pages/Map/gis'));
 export const Menu1_1 = lazy(() => import('@/pages/Nested/Menu1/Menu1-1'));
 export const Menu1_2 = lazy(() => import('@/pages/Nested/Menu1/Menu1-2'));
 export const Permissions = lazy(() => import('@/pages/Power/Permissions'));

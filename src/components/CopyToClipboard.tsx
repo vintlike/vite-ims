@@ -1,12 +1,11 @@
 import { ReactComponent as CopyIcon } from '@/assets/icons/icon-copy.svg';
+import { styled } from '@/global';
 import copyTextToClipboard from '@/utils/DomUtil';
 
 import Icon from '@ant-design/icons';
 
 import React, { useCallback, useRef } from 'react';
-import styled from 'styled-components';
 import type { HTMLAttributes } from 'react';
-import type { CSSProperties } from 'styled-components';
 
 const CopyWrap = styled.div`
   position: relative;
@@ -23,7 +22,7 @@ const CopyWrap = styled.div`
 interface Props<T> extends HTMLAttributes<T> {
   text?: string | number;
   useIcon?: boolean;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   /** 复制文案 */ copyText?: string;
   className?: string;
 }
