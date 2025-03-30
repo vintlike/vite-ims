@@ -1,6 +1,6 @@
 import { Dropdown } from 'antd';
 import { useMemo, useState } from 'react';
-import type { Interpolation, Theme } from '@emotion/react';
+import type { Interpolation, Theme } from '@/global';
 import type { MenuProps } from 'antd';
 import type { CSSProperties, ReactNode } from 'react';
 import { useTabsChange } from '../hooks/useTabsChange';

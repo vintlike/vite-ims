@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@/global';
 import { Checkbox, theme } from 'antd';
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
@@ -183,9 +183,9 @@ const CheckboxGroup: React.FC<Props> = (props) => {
         'ant-checkbox-group-large': optionType === 'button' && size === 'large'
       })}
     >
-      {options?.map((item, idx: number) => (
+      {options?.map((item) => (
         <Checkbox
-          key={idx}
+          key={item?.value}
           value={item?.value}
           disabled={item?.disabled}
           className={classNames({ 'ant-checkbox-button-wrapper': optionType === 'button' })}

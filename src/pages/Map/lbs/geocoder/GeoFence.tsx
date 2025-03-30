@@ -177,9 +177,12 @@ export default function GeoFence(props: Props) {
       </div>
       <div className="map-content">
         <div className="map-list">
-          {MapTypeList.map((item, idx) => {
+          {MapTypeList.map((item) => {
             return (
-              <div key={idx} className={classNames('map-list-item', { 'map-list-item-half': MapTypeList.length > 1 })}>
+              <div
+                key={item.value}
+                className={classNames('map-list-item', { 'map-list-item-half': MapTypeList.length > 1 })}
+              >
                 <SceneMap
                   key={item.value}
                   mapType={item.value}

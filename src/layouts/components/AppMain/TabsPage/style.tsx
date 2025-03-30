@@ -1,4 +1,4 @@
-import type { CSSObject } from '@emotion/react';
+import type { CSSObject } from '@/global';
 import type { GlobalToken } from 'antd';
 
 export const getTabsStyle = (token: GlobalToken): CSSObject => {

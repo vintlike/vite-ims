@@ -2,7 +2,7 @@ import avatar from '@/assets/images/avatar.png';
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Divider, theme } from 'antd';
 import { memo } from 'react';
-import type { CSSObject } from '@emotion/react';
+import type { CSSObject } from '@/global';
 import type { GlobalToken } from 'antd/es/theme/interface';
 
 const getCommentItem = (token: GlobalToken): CSSObject => {

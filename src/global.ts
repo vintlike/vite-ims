@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import type { CSSObject } from '@emotion/react';
+import type { CSSObject, Interpolation, Theme } from '@emotion/react';
 
-export { css, CSSObject, styled };
+export { css, CSSObject, Interpolation, styled, Theme };
